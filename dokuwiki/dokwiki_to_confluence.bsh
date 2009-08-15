@@ -1,0 +1,50 @@
+// This is a temporary macro. First, check over the
+// commands to make sure this is what you intended.
+// Then, to run this macro, switch to the buffer
+// where you would like to execute it and press C+m C+p.
+
+
+
+/*
+Known problems: 
+*/
+
+replace(string, replacement){
+	SearchAndReplace.setSearchString(string);
+	SearchAndReplace.setReplaceString(replacement);
+	SearchAndReplace.setBeanShellReplace(false);
+	SearchAndReplace.setIgnoreCase(false);
+	SearchAndReplace.setRegexp(true);
+	SearchAndReplace.setSearchFileSet(new CurrentBufferSet());
+	SearchAndReplace.replaceAll(view);
+}
+
+
+replace("^======", ".h1");
+replace("^=====", ".h2");
+replace("^====", ".h3");
+replace("^===", ".h4");
+
+replace("======$","");
+replace("=====$","");
+replace("====$","");
+replace("===$","");
+
+replace("^  \\* ", "* ");;
+replace("^    \\* ","** ");
+replace("^      \\* ","*** ");
+
+replace("<code.*>","{code}");
+replace("</code>","{code}");
+
+replace("<note tip>","(on)");
+replace("<note important>", "(!)");
+replace(":!:", "(!)")
+replace("<note warning>", "(x)");
+
+replace("</note>", "");
+replace("<del>", "-");
+replace("/<del>", "-");
+
+//textArea.selectAll();
+

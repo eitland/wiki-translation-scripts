@@ -1,0 +1,5 @@
+This idea to make a wiki translator was born because at times I've been wanting to be able to export a document to dokuwiki, do some heavy editing, and then import it back into the companys official wiki.
+
+First release contains just one beanshell script to convert from dokuwiki syntax to confluence syntax. 
+
+
